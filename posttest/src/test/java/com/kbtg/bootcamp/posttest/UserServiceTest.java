@@ -77,7 +77,7 @@ public class UserServiceTest {
     }
 
     @Test
-    @DisplayName("Test deleting lottery ticket for a user should return deleted ticket details and update lottery information")
+    @DisplayName("Test deleting lottery ticket for a user should return deleted ticket details and update lotteries information")
     void testDeleteLottery() {
         String userId = "user123";
         String ticket = "ticket123";
