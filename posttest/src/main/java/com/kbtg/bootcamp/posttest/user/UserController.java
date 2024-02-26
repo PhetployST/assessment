@@ -36,7 +36,6 @@ public class UserController {
         return this.userService.getUserLottery(userId);
     }
 
-
     @DeleteMapping("/users/{userId}/lotteries/{ticket}")
     public LotteryResponseDto deleteLotteries (@PathVariable("userId") String userId,
                                                @PathVariable("ticket") String ticket) {
