@@ -1,4 +1,4 @@
-# Lottery Subsystem
+# Lottery Ticket System
 The banking application aims to enhance user experience by enabling users to conveniently purchase lottery tickets. This feature targets the modern generation of lottery enthusiasts who seek convenience and freedom from the hassle of physically managing lottery tickets. Additionally, it facilitates easy fund transfers through the application.
 
 ## Features
