@@ -3,7 +3,6 @@ package com.kbtg.bootcamp.posttest.lottery;
 import com.kbtg.bootcamp.posttest.lottery.dto.LotteryListResponseDto;
 import com.kbtg.bootcamp.posttest.lottery.dto.LotteryRequestDto;
 import com.kbtg.bootcamp.posttest.lottery.dto.LotteryResponseDto;
-import com.kbtg.bootcamp.posttest.user.UserTicketRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +10,9 @@ import java.util.List;
 @Service
 public class LotteryService {
 
-    final LotteryRepository lotteryRepository;
-    public LotteryService(LotteryRepository lotteryRepository, UserTicketRepository userTicketRepository) {
+    private final LotteryRepository lotteryRepository;
+
+    public LotteryService(LotteryRepository lotteryRepository) {
         this.lotteryRepository = lotteryRepository;
     }
 
@@ -31,7 +31,9 @@ public class LotteryService {
         lottery.setAmount(requestDto.getAmount());
         lottery.setPrice(requestDto.getPrice());
         lotteryRepository.save(lottery);
-        return new LotteryResponseDto(lottery.getTicket());
-    }
 
+        String savedTicket = lottery.getTicket();
+
+        return new LotteryResponseDto(savedTicket);
+    }
 }
