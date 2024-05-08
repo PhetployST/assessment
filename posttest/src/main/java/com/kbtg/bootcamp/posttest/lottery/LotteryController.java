@@ -27,7 +27,7 @@ public class LotteryController {
             LotteryListResponseDto response = lotteryService.getAllLotteries();
             return ResponseEntity.ok(response);
         } catch (Exception exception) {
-            throw new InternalServiceException("Internal service exception with Normal service");
+            throw new InternalServiceException("Error occurred while retrieving lottery list: Internal service error");
         }
     }
 
