@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
+
 import javax.validation.ValidationException;
 
 @RestController
@@ -32,7 +31,7 @@ public class LotteryController {
             LotteryListResponseDto response = lotteryService.getAllLotteries();
             return ResponseEntity.ok(response);
         } catch (Exception exception) {
-            throw new InternalServiceException("Error occurred while retrieving lottery list: Internal service error");
+            throw new InternalServiceException("Error occurred while retrieving lottery list");
         }
     }
 
@@ -54,14 +53,4 @@ public class LotteryController {
         }
     }
 
-    @ExceptionHandler(ValidationException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<String> handleValidationException(ValidationException ex) {
-        String[] errorMessages = ex.getMessage().split("; ");
-        StringBuilder errorMessage = new StringBuilder();
-        for (String errorMessageLine : errorMessages) {
-            errorMessage.append(errorMessageLine).append("\n");
-        }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage.toString());
-    }
 }
