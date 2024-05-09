@@ -15,13 +15,10 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BeanPropertyBindingResult;
-import org.springframework.validation.Errors;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 public class LotteryControllerTest {
@@ -61,7 +58,7 @@ public class LotteryControllerTest {
 
         when(lotteryService.getAllLotteries()).thenThrow(new RuntimeException("Test Exception"));
 
-        Exception exception = org.junit.jupiter.api.Assertions.assertThrows(
+        Exception exception = assertThrows(
                 InternalServiceException.class,
                 () -> lotteryController.getLotteryList()
         );
@@ -70,33 +67,49 @@ public class LotteryControllerTest {
         assertEquals("Error occurred while retrieving lottery list: Internal service error", exception.getMessage());
     }
 
-//    @Test
-//    @DisplayName("Test creating lottery successfully should return CREATED status and expected response")
-//    void testCreateLottery_Success() {
-//
-//        LotteryRequestDto requestDto = new LotteryRequestDto();
-//        LotteryResponseDto responseDto = new LotteryResponseDto();
-//
-//        Mockito.when(lotteryService.createLottery(requestDto)).thenReturn(responseDto);
-//        ResponseEntity<LotteryResponseDto> responseEntity = lotteryController.createLottery(requestDto);
-//
-//        assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
-//        assertEquals(responseDto, responseEntity.getBody());
-//    }
+    @Test
+    @DisplayName("Create lottery successful should return status 200 OK and response body 123456")
+    void testCreateLottery_Success() {
 
-//    @Test
-//    @DisplayName("Test creating lottery when exception occurs should throw Internal service exception")
-//    public void testCreateLottery_Exception() {
-//
-//        LotteryRequestDto requestDto = new LotteryRequestDto();
-//
-//        Mockito.when(lotteryService.createLottery(requestDto)).thenThrow(new RuntimeException());
-//
-//        try {
-//            lotteryController.createLottery(requestDto);
-//            assert false;
-//        } catch (InternalServiceException e) {
-//            assertEquals("Internal service exception with Normal service", e.getMessage());
-//        }
-//    }
+        LotteryRequestDto requestDto = new LotteryRequestDto();
+        requestDto.setTicket("123456");
+        requestDto.setPrice(90.0);
+        requestDto.setAmount(1.0);
+
+        LotteryResponseDto responseDto = new LotteryResponseDto();
+        responseDto.setTicket("123456");
+
+        when(lotteryService.createLottery(requestDto)).thenReturn(responseDto);
+
+        BindingResult bindingResult = Mockito.mock(BindingResult.class);
+        when(bindingResult.hasErrors()).thenReturn(false);
+
+        ResponseEntity<LotteryResponseDto> responseEntity = lotteryController.createLottery(requestDto, bindingResult);
+
+        assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
+        assertEquals(responseDto, responseEntity.getBody());
+    }
+
+    @Test
+    @DisplayName("create lottery internal service exception should return An unexpected error occurred while processing your request")
+    public void testCreateLottery_InternalServiceException() {
+
+        doThrow(new RuntimeException()).when(lotteryService).createLottery(any(LotteryRequestDto.class));
+
+        LotteryRequestDto requestDto = new LotteryRequestDto();
+        requestDto.setTicket("123456");
+        requestDto.setPrice(90.0);
+        requestDto.setAmount(1.0);
+
+        InternalServiceException exception = assertThrows(InternalServiceException.class, () -> lotteryController.createLottery(requestDto, mock(BindingResult.class)));
+        assertEquals("An unexpected error occurred while processing your request", exception.getMessage());
+    }
+
+    @Test
+    @DisplayName("")
+    public void testCreateLottery_ValidationException() {
+        // create test case validation exception >>> bad request
+        // wait for me
+    }
+
 }

@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9c68493-763f-430b-bc66-db93bf17cb3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/exception/BadRequestException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/exception/ApiExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/exception/ApiExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/exception/ApiExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/exception/ApiExceptionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/lottery/LotteryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/lottery/LotteryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/lottery/LotteryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/lottery/LotteryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/lotteryTest/LotteryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/lotteryTest/LotteryServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/lotteryTest/LotteryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/lotteryTest/LotteryControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,31 +63,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.PosttestApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build posttest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LotteryControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LotteryControllerTest.testCreateLottery_Exception.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LotteryControllerTest.testCreateLottery_InvalidInputs.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LotteryControllerTest.testCreateLottery_ServiceException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LotteryControllerTest.testCreateLottery_Success.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LotteryControllerTest.testGetLotteryList_Exception.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LotteryControllerTest.testGetLotteryList_Success.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LotteryServiceTest.testGetAllLotteries.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.posttest [:PosttestApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/chocola/Desktop/Lottery-Ticket-System&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.PosttestApplication.executor": "Run",
+    "Gradle.Build posttest.executor": "Run",
+    "Gradle.LotteryControllerTest.executor": "Run",
+    "Gradle.LotteryControllerTest.testCreateLottery_Exception.executor": "Run",
+    "Gradle.LotteryControllerTest.testCreateLottery_InternalServiceException.executor": "Run",
+    "Gradle.LotteryControllerTest.testCreateLottery_InvalidInputs.executor": "Run",
+    "Gradle.LotteryControllerTest.testCreateLottery_ServiceException.executor": "Run",
+    "Gradle.LotteryControllerTest.testCreateLottery_Success.executor": "Run",
+    "Gradle.LotteryControllerTest.testGetLotteryList_Exception.executor": "Run",
+    "Gradle.LotteryControllerTest.testGetLotteryList_Success.executor": "Run",
+    "Gradle.LotteryServiceTest.testGetAllLotteries.executor": "Run",
+    "Gradle.posttest [:PosttestApplication.main()].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/chocola/Desktop/Lottery-Ticket-System",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
-  <component name="RunManager" selected="Application.PosttestApplication">
+}]]></component>
+  <component name="RunManager" selected="Gradle.LotteryControllerTest.testCreateLottery_InternalServiceException">
     <configuration name="PosttestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.kbtg.bootcamp.posttest.PosttestApplication" />
       <module name="posttest.main" />
@@ -130,7 +126,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LotteryControllerTest.testCreateLottery_Exception" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LotteryControllerTest.testCreateLottery_InternalServiceException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/posttest" />
@@ -143,7 +139,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryControllerTest.testCreateLottery_Exception&quot;" />
+            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryControllerTest.testCreateLottery_InternalServiceException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -204,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LotteryControllerTest.testCreateLottery_InternalServiceException" />
+        <item itemvalue="Gradle.LotteryControllerTest.testCreateLottery_Success" />
         <item itemvalue="Application.PosttestApplication" />
         <item itemvalue="Gradle.LotteryServiceTest.testGetAllLotteries" />
         <item itemvalue="Gradle.LotteryControllerTest" />
-        <item itemvalue="Gradle.LotteryControllerTest.testCreateLottery_Exception" />
-        <item itemvalue="Gradle.LotteryControllerTest.testCreateLottery_Success" />
       </list>
     </recent_temporary>
   </component>
