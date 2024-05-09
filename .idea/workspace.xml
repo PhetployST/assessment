@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a9c68493-763f-430b-bc66-db93bf17cb3f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/lotteryTest/LotteryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/lotteryTest/LotteryServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/main/java/com/kbtg/bootcamp/posttest/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/userTest/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/userTest/UserControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +74,25 @@
     "Gradle.LotteryControllerTest.testCreateLottery_InvalidInputs.executor": "Run",
     "Gradle.LotteryControllerTest.testCreateLottery_ServiceException.executor": "Run",
     "Gradle.LotteryControllerTest.testCreateLottery_Success.executor": "Run",
+    "Gradle.LotteryControllerTest.testCreateLottery_ValidationException.executor": "Run",
     "Gradle.LotteryControllerTest.testGetLotteryList_Exception.executor": "Run",
     "Gradle.LotteryControllerTest.testGetLotteryList_Success.executor": "Run",
+    "Gradle.LotteryServiceTest.executor": "Run",
     "Gradle.LotteryServiceTest.testCreateLottery_Failure.executor": "Run",
     "Gradle.LotteryServiceTest.testCreateLottery_Success.executor": "Run",
     "Gradle.LotteryServiceTest.testGetAllLotteries.executor": "Run",
     "Gradle.LotteryServiceTest.testGetAllLotteriesException.executor": "Run",
+    "Gradle.UserControllerTest.testBuyLotteriesController_InternalServiceException.executor": "Run",
+    "Gradle.UserControllerTest.testBuyLotteriesController_Success.executor": "Run",
+    "Gradle.UserControllerTest.testBuyLotteries_InternalServiceException.executor": "Run",
+    "Gradle.UserControllerTest.testBuyLotteries_Success.executor": "Run",
+    "Gradle.UserControllerTest.testDeleteLotteries_Exception.executor": "Run",
+    "Gradle.UserControllerTest.testDeleteLotteries_Success.executor": "Run",
+    "Gradle.UserControllerTest.testGetAllLotteryController_Success.executor": "Run",
+    "Gradle.UserControllerTest.testGetAllLottery_Exception.executor": "Run",
+    "Gradle.UserControllerTest.testGetAllLottery_InternalServiceException.executor": "Run",
+    "Gradle.UserControllerTest.testGetAllLottery_Success.executor": "Run",
+    "Gradle.UserServiceTest.executor": "Run",
     "Gradle.posttest [:PosttestApplication.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -91,8 +105,8 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.LotteryServiceTest.testCreateLottery_Failure">
-    <configuration name="LotteryControllerTest.testCreateLottery_InternalServiceException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.UserControllerTest">
+    <configuration name="UserControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/posttest" />
@@ -105,7 +119,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryControllerTest.testCreateLottery_InternalServiceException&quot;" />
+            <option value="&quot;com.kbtg.bootcamp.posttest.userTest.UserControllerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -116,7 +130,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LotteryServiceTest.testCreateLottery_Failure" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserControllerTest.testDeleteLotteries_Exception" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/posttest" />
@@ -129,7 +143,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryServiceTest.testCreateLottery_Failure&quot;" />
+            <option value="&quot;com.kbtg.bootcamp.posttest.userTest.UserControllerTest.testDeleteLotteries_Exception&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -140,7 +154,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LotteryServiceTest.testCreateLottery_Success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserControllerTest.testDeleteLotteries_Success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/posttest" />
@@ -153,7 +167,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryServiceTest.testCreateLottery_Success&quot;" />
+            <option value="&quot;com.kbtg.bootcamp.posttest.userTest.UserControllerTest.testDeleteLotteries_Success&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -164,7 +178,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LotteryServiceTest.testGetAllLotteries" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserControllerTest.testGetAllLotteryController_Success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/posttest" />
@@ -177,7 +191,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryServiceTest.testGetAllLotteries&quot;" />
+            <option value="&quot;com.kbtg.bootcamp.posttest.userTest.UserControllerTest.testGetAllLotteryController_Success&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -188,7 +202,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LotteryServiceTest.testGetAllLotteriesException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/posttest" />
@@ -201,7 +215,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryServiceTest.testGetAllLotteriesException&quot;" />
+            <option value="&quot;com.kbtg.bootcamp.posttest.userTest.UserServiceTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -214,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LotteryServiceTest.testCreateLottery_Failure" />
-        <item itemvalue="Gradle.LotteryServiceTest.testCreateLottery_Success" />
-        <item itemvalue="Gradle.LotteryServiceTest.testGetAllLotteriesException" />
-        <item itemvalue="Gradle.LotteryServiceTest.testGetAllLotteries" />
-        <item itemvalue="Gradle.LotteryControllerTest.testCreateLottery_InternalServiceException" />
+        <item itemvalue="Gradle.UserControllerTest" />
+        <item itemvalue="Gradle.UserControllerTest.testDeleteLotteries_Success" />
+        <item itemvalue="Gradle.UserControllerTest.testGetAllLotteryController_Success" />
+        <item itemvalue="Gradle.UserServiceTest" />
+        <item itemvalue="Gradle.UserControllerTest.testDeleteLotteries_Exception" />
       </list>
     </recent_temporary>
   </component>

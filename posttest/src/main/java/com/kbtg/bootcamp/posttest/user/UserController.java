@@ -27,20 +27,31 @@ public class UserController {
     public UserTicketsRequestDto buyLotteries(
             @Validated @Pattern(regexp = "\\d{10}") @PathVariable("userId") String userId,
             @PathVariable("lotteries") String lotteries) {
-
-        return this.userService.buyLotteryTicket(userId, lotteries);
+        try {
+            return this.userService.buyLotteryTicket(userId, lotteries);
+        } catch (Exception exception) {
+            throw new InternalServiceException("Failed to process lottery purchase. Unable to call user service");
+        }
     }
 
     @GetMapping("/users/{userId}/lotteries")
     public UserTicketResponseDto getAllLottery(@PathVariable("userId") String userId) {
-        return this.userService.getUserLottery(userId);
+        try {
+            return this.userService.getUserLottery(userId);
+        } catch (Exception exception) {
+            throw new InternalServiceException("Failed to process get all lotteries. Unable to call user service");
+        }
     }
 
     @DeleteMapping("/users/{userId}/lotteries/{ticket}")
     public LotteryResponseDto deleteLotteries (@PathVariable("userId") String userId,
                                                @PathVariable("ticket") String ticket) {
-        return this.userService.deleteLottery(userId, ticket);
+        try {
+            return this.userService.deleteLottery(userId, ticket);
+        }catch (Exception exception) {
+            throw new InternalServiceException("Failed to process buy lotteries. Unable to call user service");
+        }
     }
+}
 
 
-    }
