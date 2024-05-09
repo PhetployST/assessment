@@ -1,5 +1,7 @@
 package com.kbtg.bootcamp.posttest.lotteryTest;
 
+import com.kbtg.bootcamp.posttest.exception.InternalServiceException;
+import com.kbtg.bootcamp.posttest.exception.NotFoundException;
 import com.kbtg.bootcamp.posttest.lottery.Lottery;
 import com.kbtg.bootcamp.posttest.lottery.LotteryRepository;
 import com.kbtg.bootcamp.posttest.lottery.LotteryService;
@@ -18,9 +20,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 
 public class LotteryServiceTest {
@@ -37,8 +39,8 @@ public class LotteryServiceTest {
     }
 
     @Test
-    @DisplayName("get all lotteries should return list of ticket with an amount greater than or equal to 1")
-    void testGetAllLotteries() {
+    @DisplayName("get all lotteries success should return list of ticket with an amount greater than or equal to 1")
+    void testGetAllLotteriesService() {
 
         List<Lottery> mockLotteries = Arrays.asList(
                 new Lottery(1, "123222", 1.0, 80),
@@ -58,28 +60,54 @@ public class LotteryServiceTest {
         assertEquals(expectedTickets, response.getTickets());
     }
 
-//    @Test
-//    @DisplayName("Test creating a lottery with specific details should return lottery with matching ticket number")
-//    public void testCreateLottery() {
-//        // Arrange
-//        LotteryRequestDto requestDto = new LotteryRequestDto();
-//        requestDto.setTicket("123456");
-//        requestDto.setAmount(1);
-//        requestDto.setPrice(80);
-//
-//        Lottery lottery = new Lottery();
-//        lottery.setTicket("123456");
-//        lottery.setAmount(1);
-//        lottery.setPrice(80);
-//
-//        when(lotteryRepository.save(any(Lottery.class))).thenReturn(lottery);
-//
-//        // Act
-//        LotteryResponseDto responseDto = lotteryService.createLottery(requestDto);
-//
-//        // Assert
-//        assertEquals("123456", responseDto.getTicket());
-//        verify(lotteryRepository).save(any(Lottery.class));
-//    }
+    @Test
+    @DisplayName("get all lotteries exception should return There are no lottery tickets in the system")
+    void testGetAllLotteriesServiceException() {
+
+        LotteryRepository lotteryRepository = mock(LotteryRepository.class);
+        LotteryService lotteryService = new LotteryService(lotteryRepository);
+
+        NotFoundException exception = assertThrows(NotFoundException.class, () -> {
+            lotteryService.getAllLotteries();
+        });
+
+        assertEquals("There are no lottery tickets in the system.", exception.getMessage());
+    }
+
+    @Test
+    @DisplayName("Test successful creation of a lottery should return correct ticket")
+    public void testCreateLotteryService_Success() {
+
+        LotteryRequestDto requestDto = new LotteryRequestDto();
+        requestDto.setTicket("Ticket123");
+        requestDto.setAmount(10);
+        requestDto.setPrice(2.5);
+
+        Lottery lottery = new Lottery();
+        lottery.setTicket(requestDto.getTicket());
+        lottery.setAmount(requestDto.getAmount());
+        lottery.setPrice(requestDto.getPrice());
+
+        when(lotteryRepository.save(any(Lottery.class))).thenReturn(lottery);
+
+        LotteryResponseDto responseDto = lotteryService.createLottery(requestDto);
+
+        assertEquals(requestDto.getTicket(), responseDto.getTicket());
+    }
+
+    @Test
+    @DisplayName("create lotteries exception should return Failed to save lottery")
+    public void testCreateLotteryService_Failure() {
+
+        LotteryRequestDto requestDto = new LotteryRequestDto();
+        requestDto.setTicket("Ticket123");
+        requestDto.setAmount(10);
+        requestDto.setPrice(2.5);
+
+        when(lotteryRepository.save(any(Lottery.class))).thenThrow(new RuntimeException());
+
+        InternalServiceException exception = assertThrows(InternalServiceException.class, () -> lotteryService.createLottery(requestDto));
+        assertEquals("Failed to save lottery", exception.getMessage());
+    }
 
 }

@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9c68493-763f-430b-bc66-db93bf17cb3f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/lotteryTest/LotteryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/lotteryTest/LotteryControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/lotteryTest/LotteryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/posttest/src/test/java/com/kbtg/bootcamp/posttest/lotteryTest/LotteryServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,10 @@
     "Gradle.LotteryControllerTest.testCreateLottery_Success.executor": "Run",
     "Gradle.LotteryControllerTest.testGetLotteryList_Exception.executor": "Run",
     "Gradle.LotteryControllerTest.testGetLotteryList_Success.executor": "Run",
+    "Gradle.LotteryServiceTest.testCreateLottery_Failure.executor": "Run",
+    "Gradle.LotteryServiceTest.testCreateLottery_Success.executor": "Run",
     "Gradle.LotteryServiceTest.testGetAllLotteries.executor": "Run",
+    "Gradle.LotteryServiceTest.testGetAllLotteriesException.executor": "Run",
     "Gradle.posttest [:PosttestApplication.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -88,44 +91,7 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.LotteryControllerTest.testCreateLottery_InternalServiceException">
-    <configuration name="PosttestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kbtg.bootcamp.posttest.PosttestApplication" />
-      <module name="posttest.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.kbtg.bootcamp.posttest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LotteryControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/posttest" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryControllerTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.LotteryServiceTest.testCreateLottery_Failure">
     <configuration name="LotteryControllerTest.testCreateLottery_InternalServiceException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -150,7 +116,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LotteryControllerTest.testCreateLottery_Success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LotteryServiceTest.testCreateLottery_Failure" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/posttest" />
@@ -163,7 +129,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryControllerTest.testCreateLottery_Success&quot;" />
+            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryServiceTest.testCreateLottery_Failure&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LotteryServiceTest.testCreateLottery_Success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/posttest" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryServiceTest.testCreateLottery_Success&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -198,13 +188,37 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="LotteryServiceTest.testGetAllLotteriesException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/posttest" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.kbtg.bootcamp.posttest.lotteryTest.LotteryServiceTest.testGetAllLotteriesException&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LotteryControllerTest.testCreateLottery_InternalServiceException" />
-        <item itemvalue="Gradle.LotteryControllerTest.testCreateLottery_Success" />
-        <item itemvalue="Application.PosttestApplication" />
+        <item itemvalue="Gradle.LotteryServiceTest.testCreateLottery_Failure" />
+        <item itemvalue="Gradle.LotteryServiceTest.testCreateLottery_Success" />
+        <item itemvalue="Gradle.LotteryServiceTest.testGetAllLotteriesException" />
         <item itemvalue="Gradle.LotteryServiceTest.testGetAllLotteries" />
-        <item itemvalue="Gradle.LotteryControllerTest" />
+        <item itemvalue="Gradle.LotteryControllerTest.testCreateLottery_InternalServiceException" />
       </list>
     </recent_temporary>
   </component>
