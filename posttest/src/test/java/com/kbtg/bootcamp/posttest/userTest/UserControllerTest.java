@@ -100,7 +100,7 @@ public class UserControllerTest {
     }
 
     @Test
-    @DisplayName("Test get user lotteries controller with exception")
+    @DisplayName("Test get user lotteries controller with exception should return InternalServiceException")
     public void testGetAllLotteryController_Exception() {
 
         String userId = "1234567890";

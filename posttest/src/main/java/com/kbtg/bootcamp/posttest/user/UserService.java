@@ -1,5 +1,6 @@
 package com.kbtg.bootcamp.posttest.user;
 
+import com.kbtg.bootcamp.posttest.exception.InternalServiceException;
 import com.kbtg.bootcamp.posttest.exception.NotFoundException;
 import com.kbtg.bootcamp.posttest.lottery.Lottery;
 import com.kbtg.bootcamp.posttest.lottery.LotteryRepository;
@@ -33,17 +34,21 @@ public class UserService {
             throw new NotFoundException("No available tickets for this lottery");
         }
 
-        lottery.setAmount(lottery.getAmount() - 1);
-        lotteryRepository.save(lottery);
+        try {
+            lottery.setAmount(lottery.getAmount() - 1);
+            lotteryRepository.save(lottery);
 
-        UserTicket userTicket = new UserTicket();
-        userTicket.setUserId(String.valueOf(userId));
-        userTicket.setTicket(lotteries);
-        userTicket.setAmount(lottery.getAmount() + 1);
-        userTicket.setPrice(lottery.getPrice());
-        userTicketRepository.save(userTicket);
+            UserTicket userTicket = new UserTicket();
+            userTicket.setUserId(String.valueOf(userId));
+            userTicket.setTicket(lotteries);
+            userTicket.setAmount(lottery.getAmount() + 1);
+            userTicket.setPrice(lottery.getPrice());
+            userTicketRepository.save(userTicket);
 
-        return new UserTicketsRequestDto(userId);
+            return new UserTicketsRequestDto(userId);
+        }catch (Exception exception) {
+            throw new InternalServiceException("Error accessing database while buying lottery ticket");
+        }
 
     }
 

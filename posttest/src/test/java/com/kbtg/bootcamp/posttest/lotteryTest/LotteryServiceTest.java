@@ -45,7 +45,7 @@ public class LotteryServiceTest {
         List<Lottery> mockLotteries = Arrays.asList(
                 new Lottery(1, "123222", 1.0, 80),
                 new Lottery(2, "456333", 1.0, 80),
-                new Lottery(3, "789444", 0.5, 80)
+                new Lottery(3, "789444", 1.0, 80)
         );
 
         when(lotteryRepository.findAll()).thenReturn(mockLotteries);
@@ -79,9 +79,9 @@ public class LotteryServiceTest {
     public void testCreateLotteryService_Success() {
 
         LotteryRequestDto requestDto = new LotteryRequestDto();
-        requestDto.setTicket("Ticket123");
-        requestDto.setAmount(10);
-        requestDto.setPrice(2.5);
+        requestDto.setTicket("123456");
+        requestDto.setAmount(1.0);
+        requestDto.setPrice(80.0);
 
         Lottery lottery = new Lottery();
         lottery.setTicket(requestDto.getTicket());
@@ -100,9 +100,9 @@ public class LotteryServiceTest {
     public void testCreateLotteryService_Failure() {
 
         LotteryRequestDto requestDto = new LotteryRequestDto();
-        requestDto.setTicket("Ticket123");
-        requestDto.setAmount(10);
-        requestDto.setPrice(2.5);
+        requestDto.setTicket("123456");
+        requestDto.setAmount(1.0);
+        requestDto.setPrice(80.0);
 
         when(lotteryRepository.save(any(Lottery.class))).thenThrow(new RuntimeException());
 
